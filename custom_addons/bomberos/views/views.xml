@@ -1,0 +1,149 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="parque_bomberos_tree">
+            <field name="name">parque.bomberos.tree</field>
+            <field name="model">parque.bomberos</field>
+            <field name="arch" type="xml">
+                <tree string="Parque">
+
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="descripcion"/>
+                    <field name="direccion"/>
+                    <field name="plazas"/>
+                    <field name="camion_id"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="parque_bomberos_form">
+            <field name="name">parque.bomberos.form</field>
+            <field name="model">parque.bomberos</field>
+            <field name="arch" type="xml">
+                <form string="Parque">
+                    <sheet>
+                        <group>
+
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="descripcion"/>
+                            <field name="direccion"/>
+                            <field name="plazas"/>
+                            <field name="camion_id"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="parque_bomberos">
+            <field name="name">Parque</field>
+            <field name="res_model">parque.bomberos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="camion_bomberos_tree">
+            <field name="name">camion.bomberos.tree</field>
+            <field name="model">camion.bomberos</field>
+            <field name="arch" type="xml">
+                <tree string="Camion">
+
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="marca"/>
+                    <field name="fecha_compra"/>
+                    <field name="descripcion"/>
+                    <field name="bombero_id"/>
+                    <field name="parque_id"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="camion_bomberos_form">
+            <field name="name">camion.bomberos.form</field>
+            <field name="model">camion.bomberos</field>
+            <field name="arch" type="xml">
+                <form string="Camion">
+                    <sheet>
+                        <group>
+
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="marca"/>
+                            <field name="fecha_compra"/>
+                            <field name="descripcion"/>
+                            <field name="bombero_id"/>
+                            <field name="parque_id"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="camion_bomberos">
+            <field name="name">Camion</field>
+            <field name="res_model">camion.bomberos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="bombero_bomberos_tree">
+            <field name="name">bombero.bomberos.tree</field>
+            <field name="model">bombero.bomberos</field>
+            <field name="arch" type="xml">
+                <tree string="Bombero">
+
+                    <field name="name"/>
+                    <field name="edad"/>
+                    <field name="foto"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="sexo"/>
+                    <field name="descripcion"/>
+                    <field name="camion_id"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="bombero_bomberos_form">
+            <field name="name">bombero.bomberos.form</field>
+            <field name="model">bombero.bomberos</field>
+            <field name="arch" type="xml">
+                <form string="Bombero">
+                    <sheet>
+                        <group>
+
+                            <field name="name"/>
+                            <field name="edad"/>
+                            <field name="foto"/>
+                            <field name="fecha_nacimiento"/>
+                            <field name="sexo"/>
+                            <field name="descripcion"/>
+                            <field name="camion_id"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="bombero_bomberos">
+            <field name="name">Bombero</field>
+            <field name="res_model">bombero.bomberos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Servicio de Incendios" id="bomberos_menu_root"/>
+        <menuitem name="Servicio de bomberos" id="bomberos_menu_1" parent="bomberos_menu_root"/>
+        <menuitem name="Parques" id="bomberos_menu_parque" parent="bomberos_menu_1"
+                  action="parque_bomberos"/>
+        <menuitem name="Camiones" id="bomberos_menu_camion" parent="bomberos_menu_1"
+                  action="camion_bomberos"/>
+        <menuitem name="Bomberos" id="bomberos_menu_bombero" parent="bomberos_menu_1"
+                  action="bombero_bomberos"/>
+    </data>
+</odoo>
